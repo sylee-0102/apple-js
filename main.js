@@ -16,14 +16,30 @@ document.querySelector('#close').addEventListener('click', function(){
 
 // 전송버튼 누르면 input에 입력한 값이 공백이면, 알림창 띄워주기
 
-document.querySelector('form').addEventListener('submit', function(){
+// .length - 글자 수
+
+
+document.querySelector('form').addEventListener('submit', function(e){
   if(document.getElementById('email').value == ''){
-    alert('빈칸을 채워주세요');
+    alert('아이디를 입력해주세요');
+    e.preventDefault();
+  }
+  if(document.getElementById('pw').value == ''){
+    alert('비밀번호를 입력해주세요');
+    e.preventDefault();
+  }
+  if(document.getElementById('pw').value.length < 6){
+    alert('비밀번호는 6자 이상 입력해주세요');
+    e.preventDefault();
   }
 });
 
 
-// 폼점송 막으려면
+
+
+
+
+// 폼 전송 막으려면
 // e.preventDefault()
 
 
